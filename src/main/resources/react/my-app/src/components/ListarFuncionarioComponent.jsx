@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import FuncionarioService from '../services/FuncionarioService';
 
 class ListarFuncionarioComponent extends Component {
     constructor(props) {
@@ -9,11 +10,17 @@ class ListarFuncionarioComponent extends Component {
         }
     }
 
+    componentDidMount(){
+        FuncionarioService.getFuncionarios().then((res => {
+            this.setState({funcionarios:res.data});
+        }));
+    }
+
     render() {
         return (
             <div>
                 <h2 className="text-center">Lista de Funcionários</h2>
-                <div classname = "row">
+                <div className = "row">
                     <table className="table table-striped table-bordered">
                         <thead>
                             <tr>
