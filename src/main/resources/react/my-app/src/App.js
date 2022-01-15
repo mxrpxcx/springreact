@@ -1,12 +1,13 @@
 import logo from './logo.svg';
 import './App.css';
+import ListarFuncionarioComponent from './components/ListarFuncionarioComponent';
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <h1> Funcionarios </h1>
-      </header>
+    <div className="container">
+      
+      <ListarFuncionarioComponent></ListarFuncionarioComponent>
+
     </div>
   );
 }
