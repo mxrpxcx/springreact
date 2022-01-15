@@ -1,4 +1,4 @@
-package com.gxdxy.projeto.model;
+package com.gxdxy.projetospringreact.model;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
