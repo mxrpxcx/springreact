@@ -10,7 +10,7 @@ class FuncionarioService {
     }
 
     adicionarFuncionario(funcionario){
-        return axios.post(API_URL_ADICIONAR_FUNCIONARIO, funcionario)
+        return axios.post(API_URL_ADICIONAR_FUNCIONARIO, funcionario);
     }
 
     getFuncionarioId(id){
@@ -18,7 +18,11 @@ class FuncionarioService {
     }
 
     atualizarFuncionario(funcionario, id){
-        return axios.put(API_URL_LISTAR_FUNCIONARIO + '/' + id, funcionario)
+        return axios.put(API_URL_LISTAR_FUNCIONARIO + '/' + id, funcionario);
+    }
+
+    apagarFuncionario(id){
+        return axios.delete(API_URL_LISTAR_FUNCIONARIO + '/' + id);
     }
 
 }
