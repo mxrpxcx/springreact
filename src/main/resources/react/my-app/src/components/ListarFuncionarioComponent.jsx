@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import FuncionarioService from '../services/FuncionarioService';
+import { useNavigate } from 'react-router-dom'
 
 class ListarFuncionarioComponent extends Component {
     constructor(props) {
@@ -8,18 +9,32 @@ class ListarFuncionarioComponent extends Component {
         this.state = {
             funcionarios: []
         }
+        this.adicionarFuncionarios = this.adicionarFuncionarios.bind(this);
     }
 
     componentDidMount(){
         FuncionarioService.getFuncionarios().then((res => {
             this.setState({funcionarios:res.data});
         }));
+
     }
+
+    adicionarFuncionarios(){
+        this.props.navigate('/adicionarFuncionarios');
+    }
+
+    
+
 
     render() {
         return (
             <div>
                 <h2 className="text-center">Lista de Funcionários</h2>
+                    <div className='row'>
+                        <button className='btn btn-primary' onClick={this.adicionarFuncionarios}>
+                            Adicionar Funcionario     
+                        </button>        
+                    </div>
                 <div className = "row">
                     <table className="table table-striped table-bordered">
                         <thead>
@@ -49,4 +64,10 @@ class ListarFuncionarioComponent extends Component {
     }
 }
 
-export default ListarFuncionarioComponent;
+function WithNavigate(props){
+    const navigate = useNavigate();
+    return <ListarFuncionarioComponent {...props} navigate={navigate}/>
+}
+
+
+export default WithNavigate;
