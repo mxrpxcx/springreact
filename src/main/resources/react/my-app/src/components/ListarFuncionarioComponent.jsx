@@ -10,6 +10,7 @@ class ListarFuncionarioComponent extends Component {
             funcionarios: []
         }
         this.adicionarFuncionarios = this.adicionarFuncionarios.bind(this);
+        this.atualizarFuncionario = this.atualizarFuncionario.bind(this);
     }
 
     componentDidMount(){
@@ -21,6 +22,10 @@ class ListarFuncionarioComponent extends Component {
 
     adicionarFuncionarios(){
         this.props.navigate('/adicionarFuncionarios');
+    }
+
+    atualizarFuncionario(id){
+        this.props.navigate(`/atualizarFuncionarios/${id}`);
     }
 
     
@@ -54,6 +59,14 @@ class ListarFuncionarioComponent extends Component {
                                         <td> {funcionarios.nome} </td>
                                         <td> {funcionarios.sobrenome} </td>
                                         <td> {funcionarios.email} </td>
+                                        <td><button onClick={ () => this.atualizarFuncionario(funcionarios.id)} 
+                                        className="btn btn-labeled btn-warning"> 
+                                        Editar </button>
+                                        
+                                       
+                                        </td>
+
+
                                     </tr>
                                 )
                             }
