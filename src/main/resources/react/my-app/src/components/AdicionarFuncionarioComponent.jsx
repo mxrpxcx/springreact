@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { useNavigate } from 'react-router-dom'
+import FuncionarioService from '../services/FuncionarioService';
 
 class AdicionarFuncionarioComponent extends Component {
     constructor(props) {
@@ -23,6 +24,10 @@ class AdicionarFuncionarioComponent extends Component {
         e.preventDefault();
         let funcionario = {nome: this.state.nome, sobrenome: this.state.sobrenome, email:this.state.email}
         console.log('func :'+ JSON.stringify(funcionario))
+
+        FuncionarioService.adicionarFuncionario(funcionario).then(res=>{
+            this.props.navigate('/listarFuncionarios');
+        });
     }
 
     changeNomeHandler(event){
