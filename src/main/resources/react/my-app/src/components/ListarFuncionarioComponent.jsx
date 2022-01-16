@@ -30,11 +30,12 @@ class ListarFuncionarioComponent extends Component {
         return (
             <div>
                 <h2 className="text-center">Lista de Funcionários</h2>
-                    <div className='row'>
-                        <button className='btn btn-primary' onClick={this.adicionarFuncionarios}>
+                    <div className='float-left'>
+                        <button className='btn btn-outline-primary' onClick={this.adicionarFuncionarios}>
                             Adicionar Funcionario     
                         </button>        
                     </div>
+                    <br></br>
                 <div className = "row">
                     <table className="table table-striped table-bordered">
                         <thead>
