@@ -6,6 +6,7 @@ import AdicionarFuncionarioComponent from './components/AdicionarFuncionarioComp
 import FooterComponent from './components/FooterComponent';
 import HeaderComponent from './components/HeaderComponent';
 import AtualizarFuncionarioComponent from './components/AtualizarFuncionarioComponent';
+import VisualizarFuncionarioComponent from './components/VisualizarFuncionarioComponent';
 
 function App() {
   return (
@@ -13,13 +14,13 @@ function App() {
 
         
           <HeaderComponent/>
-            <div className="container">
+            <div className="container ">
               <Routes> 
                 <Route path = "/" exact element = {<ListarFuncionarioComponent/>}></Route>
                 <Route path = "/listarFuncionarios" element = {<ListarFuncionarioComponent/>}></Route>
                 <Route path = "/adicionarFuncionarios" element = {<AdicionarFuncionarioComponent/>}></Route>
                 <Route path = "/atualizarFuncionarios/:id" element = {<AtualizarFuncionarioComponent/>}></Route>
-                
+                <Route path = "/visualizarFuncionarios/:id" element = {<VisualizarFuncionarioComponent/>}></Route>
               </Routes>
             </div>
           <FooterComponent/>

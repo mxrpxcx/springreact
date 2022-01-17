@@ -21,6 +21,10 @@ class ListarFuncionarioComponent extends Component {
 
     }
 
+    visualizarFuncionario(id){
+        this.props.navigate(`/visualizarFuncionarios/${id}`);
+    }
+
     adicionarFuncionarios(){
         this.props.navigate('/adicionarFuncionarios');
     }
@@ -42,14 +46,14 @@ class ListarFuncionarioComponent extends Component {
         return (
             <div>
                 <h2 className="text-center">Lista de Funcionários</h2>
-                <div className = "row">
+                <div className = "row ">
                     <div className='float-left'>
                         <button className='btn btn-outline-primary' onClick={this.adicionarFuncionarios}>
                             Adicionar Funcionario     
                         </button>        
                     </div>
                     <br></br>
-                    <table className="table table-striped table-bordered">
+                    <table className="table table-striped table-bordered ">
                         <thead>
                             <tr>
                                 <th> Nome </th>
@@ -63,16 +67,20 @@ class ListarFuncionarioComponent extends Component {
                                 this.state.funcionarios.map(
                                     funcionarios => 
                                     <tr key  = {funcionarios.id}>
-                                        <td> {funcionarios.nome} </td>
+                                        <td>
+                                            <a href="#" onClick={()=>this.visualizarFuncionario(funcionarios.id)}>
+                                                {funcionarios.nome}
+                                            </a>  
+                                        </td>
                                         <td> {funcionarios.sobrenome} </td>
                                         <td> {funcionarios.email} </td>
                                         <td>
                                             <button onClick={ () => this.atualizarFuncionario(funcionarios.id)} 
-                                                className="btn btn-labeled btn-warning"> 
+                                                className="btn btn-warning"> 
                                             Editar </button>
 
                                             <button onClick={ () => this.apagarFuncionario(funcionarios.id)} 
-                                                className="btn btn-labeled btn-danger"> 
+                                                className="btn btn-danger"> 
                                             Apagar </button>
 
                                         </td>
