@@ -68,7 +68,7 @@ class ListarFuncionarioComponent extends Component {
                                     funcionarios => 
                                     <tr key  = {funcionarios.id}>
                                         <td>
-                                            <a href="#" onClick={()=>this.visualizarFuncionario(funcionarios.id)}>
+                                            <a href="" onClick={()=>this.visualizarFuncionario(funcionarios.id)}>
                                                 {funcionarios.nome}
                                             </a>  
                                         </td>

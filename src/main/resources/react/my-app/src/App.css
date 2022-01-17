@@ -48,6 +48,17 @@
 
 }
 
+
 .btn-label {position: relative;left: -12px;display: inline-block;padding: 6px 12px;background: rgba(0,0,0,0.15);border-radius: 3px 0 0 3px;}
 .btn-labeled {padding-top: 0;padding-bottom: 0;}
-.btn { margin-bottom:2%; margin-right: 2%; margin-top: 2%; }
+.btn { width: 46%; margin-left: 2%; margin-bottom:2%; margin-right: 2%; margin-top: 2%; }
+
+.navbar{
+  margin-bottom: 1%;
+}
+
+.rh {
+  margin-left: 10%;
+  margin-top: 5%;
+  margin-bottom: 1%;
+}
